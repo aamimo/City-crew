@@ -1,19 +1,6 @@
-// Nav Scroll Effect
-window.addEventListener('scroll', function() {
+// Navbar Transparency Effect
+window.addEventListener('scroll', () => {
     const nav = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        nav.classList.add('scrolled');
-    } else {
-        nav.classList.remove('scrolled');
-    }
-});
-
-// Smooth scrolling for links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
+    nav.style.background = window.scrollY > 50 ? 'rgba(255,255,255,0.95)' : 'transparent';
+    nav.style.boxShadow = window.scrollY > 50 ? '0 5px 15px rgba(0,0,0,0.1)' : 'none';
 });
